@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>云原生与 Kubernetes 架构展示页</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    h1 {
+      margin-top: 10px;
+      font-weight: 700;
+      color: #0052cc;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    section h2 {
+      border-left: 4px solid #0052cc;
+      padding-left: 10px;
+      color: #0052cc;
+      font-weight: 700;
+    }
+    ul, p {
+      line-height: 1.8;
+    }
+    .img-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .img-container img {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      margin-top: 50px;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+    a {
+      color: #0052cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>云原生与 Kubernetes 架构展示</h1>
+    <p>本页面全面介绍云原生理念、Kubernetes 系统架构、核心组件以及实际应用场景。</p>
+  </header>
+  <main>
+    <section>
+      <h2>一、云原生概述</h2>
+      <p>云原生（Cloud Native）是一种利用云计算能力构建和运行应用的方法。它强调系统具备高可扩展性、弹性、可观测性，并通过自动化手段实现敏捷开发与部署。云原生并非某一项技术，而是包含多种实践的技术集合，主要包括：</p>
+      <ul>
+        <li><strong>容器（Containers）：</strong> 将应用与运行环境打包，实现一致性部署。</li>
+        <li><strong>微服务（Microservices）：</strong> 通过服务拆分增强模块独立性与可维护性。</li>
+        <li><strong>服务网格（Service Mesh）：</strong> 管理服务间通信、认证和监控。</li>
+        <li><strong>声明式 API 与自动化：</strong> 提高系统的自动响应与弹性修复能力。</li>
+      </ul>
+      <p>云原生代表了一种从传统架构向现代化架构转型的方向，使企业能够快速应对市场变化。</p>
+    </section>
+
+    <section>
+      <h2>二、Kubernetes 简介</h2>
+      <p>Kubernetes 是一个由 Google 开源的容器编排平台，隶属于 CNCF（云原生计算基金会）管理。它支持自动化容器部署、扩展、负载均衡和管理。Kubernetes 能管理成千上万个容器工作负载，被广泛应用于企业级生产环境。</p>
+      <p>主要特点包括：</p>
+      <ul>
+        <li><strong>弹性伸缩：</strong> 根据负载自动调整副本数量。</li>
+        <li><strong>服务发现与负载均衡：</strong> 内建 DNS 解析和 IP 路由。</li>
+        <li><strong>声明式配置与自动修复：</strong> 系统自动将状态恢复至期望配置。</li>
+        <li><strong>跨环境部署：</strong> 同一配置支持本地、公有云与混合云。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>三、Kubernetes 架构图</h2>
+      <div class="img-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Kubernetes-diagram.png" alt="Kubernetes 架构图" />
+      </div>
+      <p>如上图所示，Kubernetes 系统由控制平面（Control Plane）与工作节点（Worker Nodes）构成，各组件职责如下：</p>
+      <ul>
+        <li><strong>API Server：</strong> 接收和处理所有 REST 请求，是 Kubernetes 的核心通信枢纽。</li>
+        <li><strong>Scheduler：</strong> 决定将 Pod 分配到哪个节点。</li>
+        <li><strong>Controller Manager：</strong> 管理集群中各类资源控制器。</li>
+        <li><strong>etcd：</strong> 轻量级高可用数据库，保存所有集群状态。</li>
+        <li><strong>Kubelet：</strong> 在每个节点上运行，负责 Pod 的生命周期管理。</li>
+        <li><strong>Kube-Proxy：</strong> 实现服务的网络访问、负载均衡与端口转发。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>四、典型应用场景</h2>
+      <ul>
+        <li>微服务应用管理平台</li>
+        <li>DevOps 流水线容器化部署</li>
+        <li>机器学习模型部署与训练任务调度</li>
+        <li>跨数据中心混合云管理</li>
+        <li>SaaS 平台的弹性架构支撑</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>五、生态系统与工具链</h2>
+      <ul>
+        <li><strong>Helm：</strong> Kubernetes 的包管理工具。</li>
+        <li><strong>Prometheus：</strong> 云原生监控与指标采集系统。</li>
+        <li><strong>Istio：</strong> 功能强大的服务网格管理工具。</li>
+        <li><strong>ArgoCD：</strong> Kubernetes 的 GitOps 工具。</li>
+        <li><strong>CRI / CNI：</strong> 容器运行时与网络插件标准。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>六、推荐阅读与资料</h2>
+      <ul>
+        <li><a href="https://kubernetes.io/zh/docs/home/" target="_blank">Kubernetes 中文文档</a></li>
+        <li><a href="https://www.cncf.io/" target="_blank">云原生计算基金会（CNCF）</a></li>
+        <li><a href="https://github.com/kubernetes/kubernetes" target="_blank">Kubernetes GitHub 仓库</a></li>
+        <li><a href="https://kube.academy/" target="_blank">KubeAcademy 免费课程</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 云原生 Kubernetes 展示页 | GitHub Pages 托管</p>
+    <p><img src="https://github.com/MoYe-308/upyun/blob/main/%E5%8F%88%E6%8B%8D%E4%BA%91_logo3.png?raw=true" alt="又拍云 Logo" style="max-width: 100px; margin-top: 10px;" /></p>
+    <p><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener">访问又拍云官网 &raquo;</a></p>
+  </footer>
+</body>
+</html>
